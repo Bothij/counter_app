@@ -8,6 +8,7 @@ void PrintAdd(int number_1, int number_2);
 void PrintSubtract(int number_1, int number_2);
 void PrintMultiply(int number_1, int number_2);
 void PrintDivide(int number_1, int number_2);
+void ListOperations();
 
 
 
@@ -19,14 +20,11 @@ int main() {
   char option;
   
   // 2) Műveletek kilistázása a konzolra.
-  std::cout << "Választható műveletek:" << std::endl;
-  std::cout << "  a) Összeadás" << std::endl;
-  std::cout << "  b) Kivonás" << std::endl;
-  std::cout << "  c) Szorzás" << std::endl;
-  std::cout << "  d) Osztás" << std::endl;
+  ListOperations();
+  
 
    // 3) A művelet típusának bekérése a felhasználótól.
-  std::cout << "Kérlek, válaszd ki a műveletet: " << std::endl;
+  
   std::cin >> option; 
    
    // 4 - Helytelen bemenet ellenőrzése.
@@ -91,3 +89,19 @@ void PrintMultiply(int number_1, int number_2) {
 void PrintDivide(int number_1, int number_2) {
   std::cout << number_1  << " / " << number_2 << " = " << DivideTwoNumbers(number_1, number_2) << std::endl;
   }
+  
+  
+  
+  
+  //print list
+void ListOperations() {
+  //2-1Az első sorban a következő üzenet jelenjen meg a konzolon: Választható műveletek:.
+  std::cout << "Választható műveletek: " << std::endl;
+  // 2-2Nyomtasd ki az elérhető műveletek listáját a konzolra.
+  std::cout << "\ta) Összeadás" << std::endl;
+  std::cout << "\tb) Kivonás" << std::endl;
+  std::cout << "\tc) Szorzás" << std::endl;
+  std::cout << "\td) Osztás" << std::endl;
+  // 2-3Az utolsó sorban pedig a következőt nyomtasd ki a konzolra: Művelet kiválasztásához üsd be a megfelelő betűt!
+  std::cout << "Művelet kiválasztásához üsd be a megfelelő betűt!" << std::endl;
+}
