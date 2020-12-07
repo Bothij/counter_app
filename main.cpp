@@ -14,16 +14,29 @@ void PrintDivide(int number_1, int number_2);
 int main() {
   int number_1 = 20;
   int number_2 = 10;
-  char option;
+  
 
+  // 1) Egy változó deklarálása a felhasználó által kiválasztott művelettípus lementéséhez.
+  char option;
+  
+  // 2) Műveletek kilistázása a konzolra.
   std::cout << "Választható műveletek:" << std::endl;
   std::cout << "  a) Összeadás" << std::endl;
   std::cout << "  b) Kivonás" << std::endl;
   std::cout << "  c) Szorzás" << std::endl;
   std::cout << "  b) Osztás" << std::endl;
+  
+  // 3) A művelet típusának bekérése a felhasználótól.
   std::cout << "Kérlek, válaszd ki a műveletet: " << std::endl;
   std::cin >> option;
-
+  // 4) A két szám bekérése a felhasználótól.
+  // 5) A felhasználó által kiválasztott művelet végrehajtása az alábbiakból.
+  /*
+    a) Összeadás
+    b) Kivonás
+    c) Szorzás
+    d) Osztás
+  */
   if (option == 'a') {
     PrintAdd(number_1, number_2);
   }
@@ -37,17 +50,6 @@ int main() {
     PrintDivide(number_1, number_2);
   }
 
-// 1) Egy változó deklarálása a felhasználó által kiválasztott művelettípus lementéséhez.
-  // 2) Műveletek kilistázása a konzolra.
-  // 3) A művelet típusának bekérése a felhasználótól.
-  // 4) A két szám bekérése a felhasználótól.
-  // 5) A felhasználó által kiválasztott művelet végrehajtása az alábbiakból.
-  /*
-    a) Összeadás
-    b) Kivonás
-    c) Szorzás
-    d) Osztás
-  */
   // 6) Helytelen bemenet esetén a program kiléptetése.
 }
 
