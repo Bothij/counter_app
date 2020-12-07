@@ -12,9 +12,9 @@ void ListOperations();
 
 
 
+
 int main() {
-  int number_1 = 20;
-  int number_2 = 10;
+  
   
   //[x] 1 - Egy változó deklarálása a felhasználó által kiválasztott művelet lementéséhez.
   char option;
@@ -36,9 +36,19 @@ int main() {
     }
    
   // 7 - A két szám bekérése a felhasználótól.
+  //7-1 Kettő változó deklarálása a számok lementéséhez.
+  int number_1;
+  int number_2;
+  // 7-2 Üzenet a felhasználó számára és az első szám bekérése.
+  std::cout << "Add meg az első számot: " << std::endl;
+  std::cin >> number_1;
   
-  // 8) A felhasználó által kiválasztott művelet végrehajtása az alábbiakból.
-  /*
+  //7-3 Üzenet a felhasználó számára és a második szám bekérése.
+  std::cout << "Add meg a második számot: " << std::endl;
+  std::cin >> number_2;
+  
+  // 7-4 A felhasználó által kiválasztott művelet végrehajtása az alábbiakból.
+    /*
     a) Összeadás
     b) Kivonás
     c) Szorzás
@@ -105,3 +115,7 @@ void ListOperations() {
   // 2-3Az utolsó sorban pedig a következőt nyomtasd ki a konzolra: Művelet kiválasztásához üsd be a megfelelő betűt!
   std::cout << "Művelet kiválasztásához üsd be a megfelelő betűt!" << std::endl;
 }
+
+
+ 
+
