@@ -9,4 +9,6 @@ int main() {
   std::cout << number_1  << " - " << number_2 << " = " << number_1 - number_2 << std::endl;
   //multiplying - szorzás
   std::cout << number_1  << " * " << number_2 << " = " << number_1 * number_2 << std::endl;
+  //division - osztás (typecasting)
+  std::cout << number_1  << " / " << number_2 << " = " << number_1 / (double)number_2 << std::endl;
 }
