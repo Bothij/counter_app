@@ -24,7 +24,7 @@ int main() {
   std::cout << "  a) Összeadás" << std::endl;
   std::cout << "  b) Kivonás" << std::endl;
   std::cout << "  c) Szorzás" << std::endl;
-  std::cout << "  b) Osztás" << std::endl;
+  std::cout << "  d) Osztás" << std::endl;
   
   // 3) A művelet típusának bekérése a felhasználótól.
   std::cout << "Kérlek, válaszd ki a műveletet: " << std::endl;
@@ -39,14 +39,11 @@ int main() {
   */
   if (option == 'a') {
     PrintAdd(number_1, number_2);
-  }
-  if (option == 'b') {
+  } else if (option == 'b') {
     PrintSubtract(number_1, number_2);
-  }
-  if (option == 'c') {
+  } else if (option == 'c') {
     PrintMultiply(number_1, number_2);
-  }
-  if (option == 'd') {
+  } else if (option == 'd') {
     PrintDivide(number_1, number_2);
   }
 
