@@ -15,8 +15,7 @@ int main() {
   int number_1 = 20;
   int number_2 = 10;
   
-
-  // 1) Egy változó deklarálása a felhasználó által kiválasztott művelettípus lementéséhez.
+  //[x] 1 - Egy változó deklarálása a felhasználó által kiválasztott művelet lementéséhez.
   char option;
   
   // 2) Műveletek kilistázása a konzolra.
@@ -25,12 +24,20 @@ int main() {
   std::cout << "  b) Kivonás" << std::endl;
   std::cout << "  c) Szorzás" << std::endl;
   std::cout << "  d) Osztás" << std::endl;
-  
-  // 3) A művelet típusának bekérése a felhasználótól.
+
+   // 3) A művelet típusának bekérése a felhasználótól.
   std::cout << "Kérlek, válaszd ki a műveletet: " << std::endl;
-  std::cin >> option;
-  // 4) A két szám bekérése a felhasználótól.
-  // 5) A felhasználó által kiválasztott művelet végrehajtása az alábbiakból.
+  std::cin >> option; 
+    if (option != 'a' && option != 'b' && option != 'c' && option != 'd') {
+      std::cout << "Hiba, nincs ilyen művelet!" << std::endl;
+    }
+  
+  // 4 - Helytelen bemenet ellenőrzése.
+  // 5 - Üzenet a felhasználónak a program hibájáról.
+  // 6 - Program kiléptetése hiba esetén.
+  // 7 - A két szám bekérése a felhasználótól.
+  
+  // 8) A felhasználó által kiválasztott művelet végrehajtása az alábbiakból.
   /*
     a) Összeadás
     b) Kivonás
@@ -47,17 +54,7 @@ int main() {
     PrintDivide(number_1, number_2);
   }
 
-  // 6) Helytelen bemenet esetén a program kiléptetése.
 }
-
-  /*AddTwoNumbers(number_1, number_2);
-  SubtractTwoNumbers(number_1, number_2);
-  MultiplyTwoNumbers(number_1, number_2);
-  DivideTwoNumbers(number_1, number_2);
-  PrintAdd(number_1, number_2);
-  PrintSubtract(number_1, number_2);
-  PrintMultiply(number_1, number_2);
-  PrintDivide(number_1, number_2);*/
   
 
 
