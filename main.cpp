@@ -28,13 +28,15 @@ int main() {
    // 3) A művelet típusának bekérése a felhasználótól.
   std::cout << "Kérlek, válaszd ki a műveletet: " << std::endl;
   std::cin >> option; 
+   
+   // 4 - Helytelen bemenet ellenőrzése.
     if (option != 'a' && option != 'b' && option != 'c' && option != 'd') {
-      std::cout << "Hiba, nincs ilyen művelet!" << std::endl;
+       // 5 - Üzenet a felhasználónak a program hibájáról.
+      std::cerr << "Rossz karaktert adtál meg, ezért a program leáll!" << std::endl;
+       // 6 - Program kiléptetése hiba esetén.
+      return 1;
     }
-  
-  // 4 - Helytelen bemenet ellenőrzése.
-  // 5 - Üzenet a felhasználónak a program hibájáról.
-  // 6 - Program kiléptetése hiba esetén.
+   
   // 7 - A két szám bekérése a felhasználótól.
   
   // 8) A felhasználó által kiválasztott művelet végrehajtása az alábbiakból.
