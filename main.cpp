@@ -3,17 +3,17 @@
 void AddTwoNumbers(int number_1, int number_2);
 void SubtractTwoNumbers(int number_1, int number_2);
 void MultiplyTwoNumbers(int number_1, int number_2);
-void DivideTwoNumber(int number_1, int number_2);
+void DivideTwoNumbers(int number_1, int number_2);
 
 
 int main() {
   int number_1 = 5;
   int number_2 = 10;
   
-  void AddTwoNumbers();
-  void SubtractTwoNumbers();
-  void MultiplyTwoNumbers();
-  void DivideTwoNumber();
+  AddTwoNumbers(number_1, number_2);
+  SubtractTwoNumbers(number_1, number_2);
+  MultiplyTwoNumbers(number_1, number_2);
+  DivideTwoNumbers(number_1, number_2);
   
   
   
