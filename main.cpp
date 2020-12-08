@@ -12,15 +12,27 @@ void ListOperations();
 void CalculateResult(char option, int number_1, int number_2);
 
 int main() {
+  // 1) Egy változó deklarálása a kilépésnél megadott „x” karakter mentéséhez.
   char option;
+  // 2) A ciklus indítása.
+  // 3) Karakter bekérése a felhasználótól.
+    // 4) Az „x” karakter ellenőrzése.
+  // 5) Üzenet a felhasználónak a program leállításáról.
+  // 6) A már kész számológép futtatása.
+  // 7) Az „x” karakter ellenőrzése a kontrolláló feltételben.
+  do {
   
   ListOperations();
     
   std::cin >> option; 
-    if (option != 'a' && option != 'b' && option != 'c'   && option != 'd') {
+    if (option == 'x') {
+     std::cout << "Viszlát!" << std::endl;
+     return option;
+    }
+      else if(option != 'a' && option != 'b' && option != 'c'   && option != 'd') {
       std::cerr << "Rossz karaktert adtál meg, ezért a program leáll!" << std::endl;
       return 1;
-    }
+      }
   int number_1;
   int number_2;
   
@@ -30,6 +42,9 @@ int main() {
   std::cin >> number_2;
   
   CalculateResult(option, number_1, number_2);
+
+  }
+  while (option != 'x');
 
 }
   
@@ -67,6 +82,7 @@ void ListOperations() {
   std::cout << "\tb) Kivonás" << std::endl;
   std::cout << "\tc) Szorzás" << std::endl;
   std::cout << "\td) Osztás" << std::endl;
+  std::cout << "\tx) Kilépés" << std::endl;
   std::cout << "Művelet kiválasztásához üsd be a megfelelő betűt!" << std::endl;
 }
 void CalculateResult(char option, int number_1, int number_2) {
