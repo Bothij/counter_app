@@ -20,7 +20,6 @@ int main() {
   
   int number_1;
   int number_2;
-  int number_3;
   char option;
   
   do {
@@ -69,6 +68,9 @@ double DivideTwoNumbers(int number_1, int number_2) {
 int ExponentiateTwoNumbers(int number_1, int number_2){
   return pow(number_1, number_2);
 }
+double SquareRootNumber(int number_1) {
+  return sqrt(number_1);
+}
 
 void PrintAdd(int number_1, int number_2) {
   std::cout << number_1  << " + " << number_2 << " = " << AddTwoNumbers(number_1, number_2) << std::endl;
@@ -87,10 +89,10 @@ void PrintDivide(int number_1, int number_2) {
   }
 
 void PrintExponent(int number_1, int number_2) {
-  std::cout << number_1 << " pow(number_1, number_2) << std::endl;
+  std::cout << number_1 << " ^ " << number_2 << " = " << ExponentiateTwoNumbers(number_1, number_2) << std::endl;
 }
 void PrintSquareRoot(int number_1){
-  std::cout << sqrt(number_1) << std::endl;
+  std::cout << number_1 << " √ = " << SquareRootNumber(number_1) << std::endl;
 }
 
 void ListOperations() {
@@ -100,6 +102,7 @@ void ListOperations() {
   std::cout << "\tc) - Szorzás" << std::endl;
   std::cout << "\td) - Osztás" << std::endl;
   std::cout << "\te) - Hatványozás" << std::endl;
+  std::cout << "\tf) - Négyzetgyökvonás" << std::endl;
   std::cout << "\tx) - Kilépés" << std::endl;
   std::cout << "Művelet kiválasztásához üsd be a megfelelő betűt!" << std::endl;
 }
@@ -116,6 +119,7 @@ void CalculateResult(char option, int number_1, int number_2) {
     PrintExponent(number_1, number_2);
   } else if (option == 'f') {
     PrintSquareRoot(number_1);
+  }
 }
 
 
