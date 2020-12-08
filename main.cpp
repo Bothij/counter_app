@@ -6,16 +6,21 @@ int SubtractTwoNumbers(int number_1, int number_2);
 int MultiplyTwoNumbers(int number_1, int number_2);
 double DivideTwoNumbers(int number_1, int number_2);
 int ExponentiateTwoNumbers(int number_1, int number_2);
+double SquareRootNumber(int number_1);
 void PrintAdd(int number_1, int number_2);
 void PrintSubtract(int number_1, int number_2);
 void PrintMultiply(int number_1, int number_2);
 void PrintDivide(int number_1, int number_2);
 void PrintExponent(int number_1, int number_2);
+void PrintSquareRoot(int number_1);
 void ListOperations();
 void CalculateResult(char option, int number_1, int number_2);
 
 int main() {
   
+  int number_1;
+  int number_2;
+  int number_3;
   char option;
   
   do {
@@ -26,18 +31,22 @@ int main() {
     if (option == 'x' || option == 'X') {
       std::cout << "Viszlát!" << std::endl;
      continue;
-      }
-      else if(option != 'a' && option != 'b' && option != 'c' && option != 'd' && option != 'e') {
+      }else if (option == 'f') {
+        std::cout << "Add meg a számot: " << std::endl;
+        std::cin >> number_1;
+      }else if (option == 'a' || option == 'b' || option == 'c' || option == 'd' || option == 'e') {
+        std::cout << "Add meg az első számot: " << std::endl;
+        std::cin >> number_1;
+        std::cout << "Add meg a második számot: " << std::endl;
+        std::cin >> number_2;
+      } 
+      else {
       std::cerr << "Rossz karaktert adtál meg, ezért a program leáll!" << std::endl;
       return 1;
       }
-  int number_1;
-  int number_2;
   
-  std::cout << "Add meg az első számot: " << std::endl;
-  std::cin >> number_1;
-  std::cout << "Add meg a második számot: " << std::endl;
-  std::cin >> number_2;
+  
+  
   
   CalculateResult(option, number_1, number_2);
 
@@ -78,7 +87,10 @@ void PrintDivide(int number_1, int number_2) {
   }
 
 void PrintExponent(int number_1, int number_2) {
-  std::cout << pow(number_1, number_2) << std::endl;
+  std::cout << number_1 << " pow(number_1, number_2) << std::endl;
+}
+void PrintSquareRoot(int number_1){
+  std::cout << sqrt(number_1) << std::endl;
 }
 
 void ListOperations() {
@@ -102,7 +114,8 @@ void CalculateResult(char option, int number_1, int number_2) {
     PrintDivide(number_1, number_2);
   } else if (option == 'e') {
     PrintExponent(number_1, number_2);
-  }
+  } else if (option == 'f') {
+    PrintSquareRoot(number_1);
 }
 
 
