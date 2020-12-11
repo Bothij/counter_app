@@ -15,6 +15,9 @@ void PrintExponent(int number_1, int number_2);
 void PrintSquareRoot(int number_1);
 void ListOperations();
 void CalculateResult(char option, int number_1, int number_2);
+int CountForSquare(int number_1);
+int NumberFromUser1(int number_1);
+int NumberFromUser2(int number_2);
 
 int main() {
   
@@ -31,13 +34,11 @@ int main() {
       std::cout << "Viszlát!" << std::endl;
      continue;
       }else if (option == 'f') {
-        std::cout << "Add meg a számot: " << std::endl;
-        std::cin >> number_1;
+        number_1 = CountForSquare(number_1);
+                
       }else if (option == 'a' || option == 'b' || option == 'c' || option == 'd' || option == 'e') {
-        std::cout << "Add meg az első számot: " << std::endl;
-        std::cin >> number_1;
-        std::cout << "Add meg a második számot: " << std::endl;
-        std::cin >> number_2;
+        number_1 = NumberFromUser1(number_1);
+        number_2 = NumberFromUser2(number_2);
       } 
       else {
       std::cerr << "Rossz karaktert adtál meg, ezért a program leáll!" << std::endl;
@@ -121,6 +122,24 @@ void CalculateResult(char option, int number_1, int number_2) {
     PrintSquareRoot(number_1);
   }
 }
+
+int NumberFromUser1(int number_1) {
+    std::cout << "Add meg az első számot: " << std::endl;
+    std::cin >> number_1;
+    return number_1;
+}
+int NumberFromUser2(int number_2) {
+  std::cout << "Add meg a második számot: " << std::endl;
+  std::cin >> number_2;
+  return number_2;
+}
+
+  int CountForSquare(int number_1){ 
+    std::cout << "Add meg a számot: " << std::endl;
+    std::cin >> number_1;
+    return number_1;
+  }
+
 
 
  
