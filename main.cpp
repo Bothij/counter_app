@@ -15,6 +15,7 @@ void PrintExponent(int number_1, int number_2);
 void PrintSquareRoot(int number_1);
 void ListOperations();
 void CalculateResult(char option, int number_1, int number_2);
+void CountPower(int number_1, int number_2);
 int CountForSquare(int number_1);
 int NumberFromUser1(int number_1);
 int NumberFromUser2(int number_2);
@@ -35,7 +36,17 @@ int main() {
      continue;
       }else if (option == 'f') {
         number_1 = CountForSquare(number_1);
-                
+      } 
+        else if (option == 'g') {
+        std::cout << "A derékszögű háromszög melyik oldalát szeretné kiszámolni?" << std::endl;
+        std::cout << "1.) - Az átfogót." << std::endl;
+        std::cout << "2.) - Az egyik befogót." << std::endl;
+      }
+      else if (option == 'h') {
+        number_1 = NumberFromUser1(number_1);
+        number_2 = NumberFromUser2(number_2);
+        CountPower(number_1, number_2);
+                      
       }else if (option == 'a' || option == 'b' || option == 'c' || option == 'd' || option == 'e') {
         number_1 = NumberFromUser1(number_1);
         number_2 = NumberFromUser2(number_2);
@@ -72,6 +83,10 @@ int ExponentiateTwoNumbers(int number_1, int number_2){
 double SquareRootNumber(int number_1) {
   return sqrt(number_1);
 }
+void CountPower (int number_1, int number_2) {
+  std::cout << number_1 << "^2 + " << number_2 << "^2 = " << pow(number_1, 2) << " + " << pow(number_2, 2) << " = " << pow(number_1, 2) + pow(number_2, 2) << std::endl;
+  std::cout << pow(number_1, 2) + pow(number_2, 2) << " √ = " << sqrt(pow(number_1, 2) + pow(number_2, 2)) << std::endl; 
+}
 
 void PrintAdd(int number_1, int number_2) {
   std::cout << number_1  << " + " << number_2 << " = " << AddTwoNumbers(number_1, number_2) << std::endl;
@@ -104,6 +119,7 @@ void ListOperations() {
   std::cout << "\td) - Osztás" << std::endl;
   std::cout << "\te) - Hatványozás" << std::endl;
   std::cout << "\tf) - Négyzetgyökvonás" << std::endl;
+  std::cout << "\tg) - Pitagorasz-tétel alkalmazása" << std::endl;
   std::cout << "\tx) - Kilépés" << std::endl;
   std::cout << "Művelet kiválasztásához üsd be a megfelelő betűt!" << std::endl;
 }
