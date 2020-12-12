@@ -19,12 +19,17 @@ void CountPower(int number_1, int number_2);
 int CountForSquare(int number_1);
 int NumberFromUser1(int number_1);
 int NumberFromUser2(int number_2);
+int NumberToOneSide(int number_1);
+int NumberToSecondSide(int number_2);
+int NumberToHypotenuse(int number_3);
 
 int main() {
   
   int number_1;
   int number_2;
+  int number_3;
   char option;
+  char option_2;
   
   do {
   
@@ -39,8 +44,16 @@ int main() {
       } 
         else if (option == 'g') {
         std::cout << "A derékszögű háromszög melyik oldalát szeretné kiszámolni?" << std::endl;
-        std::cout << "1.) - Az átfogót." << std::endl;
-        std::cout << "2.) - Az egyik befogót." << std::endl;
+        std::cout << "a.) - Az átfogót." << std::endl;
+        std::cout << "b.) - Az egyik befogót." << std::endl;
+        std::cin >> option_2;
+          if (option_2 == 'a') {
+            number_1 = NumberToOneSide(number_1);
+            number_2 = NumberToSecondSide(number_2);
+          } else if (option_2 == 'b') {
+            number_3 = NumberToHypotenuse(number_3);
+            number_1 = NumberToOneSide(number_1);     
+          }
       }
       else if (option == 'h') {
         number_1 = NumberFromUser1(number_1);
@@ -56,9 +69,7 @@ int main() {
       return 1;
       }
   
-  
-  
-  
+    
   CalculateResult(option, number_1, number_2);
 
   }
@@ -83,10 +94,28 @@ int ExponentiateTwoNumbers(int number_1, int number_2){
 double SquareRootNumber(int number_1) {
   return sqrt(number_1);
 }
+//Pitagorasz-tétel kezdete
+
 void CountPower (int number_1, int number_2) {
   std::cout << number_1 << "^2 + " << number_2 << "^2 = " << pow(number_1, 2) << " + " << pow(number_2, 2) << " = " << pow(number_1, 2) + pow(number_2, 2) << std::endl;
   std::cout << pow(number_1, 2) + pow(number_2, 2) << " √ = " << sqrt(pow(number_1, 2) + pow(number_2, 2)) << std::endl; 
 }
+int NumberToOneSide(int number_1) {
+    std::cout << "Add meg az egyik befogó hosszúságát: " << std::endl;
+    std::cin >> number_1;
+    return number_1;
+}
+int NumberToSecondSide(int number_2) {
+  std::cout << "Add meg a másik befogó hosszúságát: " << std::endl;
+  std::cin >> number_2;
+  return number_2;
+}
+int NumberToHypotenuse(int number_3) {
+  std::cout << "Add meg az átfogó hosszúságát: " << std::endl;
+  std::cin >> number_3;
+  return number_3;
+}
+//Pitagorasz-tétel vége
 
 void PrintAdd(int number_1, int number_2) {
   std::cout << number_1  << " + " << number_2 << " = " << AddTwoNumbers(number_1, number_2) << std::endl;
