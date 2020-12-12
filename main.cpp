@@ -45,19 +45,34 @@ int main() {
         number_1 = CountForSquare(number_1);
       } 
         else if (option == 'g') {
-        std::cout << "A derékszögű háromszög melyik oldalát szeretné kiszámolni?" << std::endl;
-        std::cout << "a.) - Az átfogót." << std::endl;
-        std::cout << "b.) - Az egyik befogót." << std::endl;
-        std::cin >> option_2;
-          if (option_2 == 'a') {
+        do {
+          std::cout << "A derékszögű háromszög melyik oldalát szeretné kiszámolni?" << std::endl;
+          std::cout << "a.) - Az átfogót." << std::endl;
+          std::cout << "b.) - Az egyik befogót." << std::endl;
+          std::cout << "x.) - Visszalépés a műveletekhez." << std::endl;
+            std::cin >> option_2;
+            if (option_2 == 'x') {
+              continue;
+            }
+            else if (option_2 == 'a') {
             number_1 = NumberToOneSide(number_1);
             number_2 = NumberToSecondSide(number_2);
             PrintCountHypotenuse(number_1, number_2);
-          } else if (option_2 == 'b') {
-            number_3 = NumberToHypotenuse(number_3);
-            number_1 = NumberToOneSide(number_1); 
-            PrintCountOneSide (number_3, number_1);
-          }
+            } else if (option_2 == 'b') {
+              number_3 = NumberToHypotenuse(number_3);
+              number_1 = NumberToOneSide(number_1); 
+                if (number_3 <= number_1) {
+                std::cerr << "Az átfogónak nagyobbnak kell lenni, mint a befogónak\nPróbáld meg újra!\n" << std::endl;
+              }else if (number_3 > number_1){
+                PrintCountOneSide (number_3, number_1);
+              }
+          }else {
+            std::cerr << "Rossz karaktert adtál meg.\nPróbáld meg újra!\n" << std::endl;
+            }
+            
+        }
+        while (option_2 != 'x' && option != 'X');
+  
         }else if (option == 'a' || option == 'b' || option == 'c' || option == 'd' || option == 'e') {
         number_1 = NumberFromUser1(number_1);
         number_2 = NumberFromUser2(number_2);
@@ -97,11 +112,11 @@ double SquareRootNumber(int number_1) {
 
 void PrintCountHypotenuse (int number_1, int number_2) {
   std::cout << number_1 << "^2 + " << number_2 << "^2 = " << pow(number_1, 2) << " + " << pow(number_2, 2) << " = " << pow(number_1, 2) + pow(number_2, 2) << std::endl;
-  std::cout << pow(number_1, 2) + pow(number_2, 2) << " √ = " << sqrt(pow(number_1, 2) + pow(number_2, 2)) << std::endl; 
+  std::cout << pow(number_1, 2) + pow(number_2, 2) << " √ = " << sqrt(pow(number_1, 2) + pow(number_2, 2)) << "\n" << std::endl; 
 }
 void PrintCountOneSide (int number_3, int number_1) {
   std::cout << number_3 << "^2 - " << number_1 << "^2 = " << pow(number_3, 2) << " - " << pow(number_1, 2) << " = " << pow(number_3, 2) - pow(number_1, 2) << std::endl;
-  std::cout << pow(number_3, 2) - pow(number_1, 2) << " √ = " << sqrt(pow(number_3, 2) - pow(number_1, 2)) << std::endl; 
+  std::cout << pow(number_3, 2) - pow(number_1, 2) << " √ = " << sqrt(pow(number_3, 2) - pow(number_1, 2)) << "\n" << std::endl; 
 }
 int NumberToOneSide(int number_1) {
     std::cout << "Add meg az egyik befogó hosszúságát: " << std::endl;
