@@ -7,6 +7,8 @@ int MultiplyTwoNumbers(int number_1, int number_2);
 double DivideTwoNumbers(int number_1, int number_2);
 int ExponentiateTwoNumbers(int number_1, int number_2);
 double SquareRootNumber(int number_1);
+double CountHypotenuse(int number_1, int number_2);
+double CountOneSide(int number_3, int number_1);
 void PrintAdd(int number_1, int number_2);
 void PrintSubtract(int number_1, int number_2);
 void PrintMultiply(int number_1, int number_2);
@@ -109,14 +111,20 @@ double SquareRootNumber(int number_1) {
   return sqrt(number_1);
 }
 //Pitagorasz-tétel kezdete
-
-void PrintCountHypotenuse (int number_1, int number_2) {
-  std::cout << number_1 << "^2 + " << number_2 << "^2 = " << pow(number_1, 2) << " + " << pow(number_2, 2) << " = " << pow(number_1, 2) + pow(number_2, 2) << std::endl;
-  std::cout << pow(number_1, 2) + pow(number_2, 2) << " √ = " << sqrt(pow(number_1, 2) + pow(number_2, 2)) << "\n" << std::endl; 
+double CountHypotenuse(int number_1, int number_2) {
+  return sqrt(pow(number_1, 2) + pow(number_2, 2));
+  }
+double CountOneSide(int number_3, int number_1) {
+  return sqrt(pow(number_3, 2) - pow(number_1, 2));
 }
-void PrintCountOneSide (int number_3, int number_1) {
+
+void PrintCountHypotenuse(int number_1, int number_2) {
+  std::cout << number_1 << "^2 + " << number_2 << "^2 = " << pow(number_1, 2) << " + " << pow(number_2, 2) << " = " << pow(number_1, 2) + pow(number_2, 2) << std::endl;
+  std::cout << "√" << pow(number_1, 2) + pow(number_2, 2) << " = " << CountHypotenuse(number_1, number_2) << "\n" << std::endl; 
+}
+void PrintCountOneSide(int number_3, int number_1) {
   std::cout << number_3 << "^2 - " << number_1 << "^2 = " << pow(number_3, 2) << " - " << pow(number_1, 2) << " = " << pow(number_3, 2) - pow(number_1, 2) << std::endl;
-  std::cout << pow(number_3, 2) - pow(number_1, 2) << " √ = " << sqrt(pow(number_3, 2) - pow(number_1, 2)) << "\n" << std::endl; 
+  std::cout << "√" << pow(number_3, 2) - pow(number_1, 2) << " = " << CountOneSide(number_3, number_1) << "\n" << std::endl; 
 }
 int NumberToOneSide(int number_1) {
     std::cout << "Add meg az egyik befogó hosszúságát: " << std::endl;
@@ -155,7 +163,7 @@ void PrintExponent(int number_1, int number_2) {
   std::cout << number_1 << " ^ " << number_2 << " = " << ExponentiateTwoNumbers(number_1, number_2) << std::endl;
 }
 void PrintSquareRoot(int number_1){
-  std::cout << number_1 << " √ = " << SquareRootNumber(number_1) << std::endl;
+  std::cout << "√" << number_1 << " = " << SquareRootNumber(number_1) << std::endl;
 }
 
 void ListOperations() {
