@@ -1,37 +1,37 @@
 #include <iostream>
 #include <math.h>
 
-int AddTwoNumbers(int number_1, int number_2);
-int SubtractTwoNumbers(int number_1, int number_2);
-int MultiplyTwoNumbers(int number_1, int number_2);
-double DivideTwoNumbers(int number_1, int number_2);
-int ExponentiateTwoNumbers(int number_1, int number_2);
-double SquareRootNumber(int number_1);
-double CountHypotenuse(int number_1, int number_2);
-double CountOneSide(int number_3, int number_1);
-void PrintAdd(int number_1, int number_2);
-void PrintSubtract(int number_1, int number_2);
-void PrintMultiply(int number_1, int number_2);
-void PrintDivide(int number_1, int number_2);
-void PrintExponent(int number_1, int number_2);
-void PrintSquareRoot(int number_1);
-void PrintCountHypotenuse (int number_1, int number_2);
-void PrintCountOneSide (int number_3, int number_1);
+double AddTwoNumbers(double number_1, double number_2);
+double SubtractTwoNumbers(double number_1, double number_2);
+double MultiplyTwoNumbers(double number_1, double number_2);
+double DivideTwoNumbers(double number_1, double number_2);
+double ExponentiateTwoNumbers(double number_1, double number_2);
+double SquareRootNumber(double number_1);
+double CountHypotenuse(double number_1, double number_2);
+double CountOneSide(double number_3, double number_1);
+void PrintAdd(double number_1, double number_2);
+void PrintSubtract(double number_1, double number_2);
+void PrintMultiply(double number_1, double number_2);
+void PrintDivide(double number_1, double number_2);
+void PrintExponent(double number_1, double number_2);
+void PrintSquareRoot(double number_1);
+void PrintCountHypotenuse (double number_1, double number_2);
+void PrintCountOneSide (double number_3, double number_1);
 void ListOperations();
-void CalculateResult(char option, int number_1, int number_2);
+void CalculateResult(char option, double number_1, double number_2);
 
-int CountForSquare(int number_1);
-int NumberFromUser1(int number_1);
-int NumberFromUser2(int number_2);
-int NumberToOneSide(int number_1);
-int NumberToSecondSide(int number_2);
-int NumberToHypotenuse(int number_3);
+double CountForSquare(double number_1);
+double NumberFromUser1(double number_1);
+double NumberFromUser2(double number_2);
+double NumberToOneSide(double number_1);
+double NumberToSecondSide(double number_2);
+double NumberToHypotenuse(double number_3);
 
 int main() {
   
-  int number_1;
-  int number_2;
-  int number_3;
+  double number_1;
+  double number_2;
+  double number_3;
   char option;
   char option_2;
   
@@ -48,7 +48,7 @@ int main() {
       } 
         else if (option == 'g') {
         do {
-          std::cout << "A derékszögű háromszög melyik oldalát szeretné kiszámolni?" << std::endl;
+          std::cout << "A derékszögű háromszög melyik oldalát szeretnéd kiszámolni?" << std::endl;
           std::cout << "a.) - Az átfogót." << std::endl;
           std::cout << "b.) - Az egyik befogót." << std::endl;
           std::cout << "x.) - Visszalépés a műveletekhez." << std::endl;
@@ -64,7 +64,7 @@ int main() {
               number_3 = NumberToHypotenuse(number_3);
               number_1 = NumberToOneSide(number_1); 
                 if (number_3 <= number_1) {
-                std::cerr << "Az átfogónak nagyobbnak kell lenni, mint a befogónak\nPróbáld meg újra!\n" << std::endl;
+                std::cerr << "Az átfogónak nagyobbnak kell lenni, mint a befogónak.\nPróbáld meg újra!\n" << std::endl;
               }else if (number_3 > number_1){
                 PrintCountOneSide (number_3, number_1);
               }
@@ -93,76 +93,76 @@ int main() {
 
 }
   
-int AddTwoNumbers(int number_1, int number_2) {
+double AddTwoNumbers(double number_1, double number_2) {
   return number_1 + number_2;
 }
-int SubtractTwoNumbers(int number_1, int number_2) {     return number_1 - number_2;
+double SubtractTwoNumbers(double number_1, double number_2) {     return number_1 - number_2;
 }
-int MultiplyTwoNumbers(int number_1, int number_2) {
+double MultiplyTwoNumbers(double number_1, double number_2) {
   return number_1 * number_2;
 }
-double DivideTwoNumbers(int number_1, int number_2) {
-  return number_1 / (double)number_2;
+double DivideTwoNumbers(double number_1, double number_2) {
+  return number_1 / number_2;
 }
-int ExponentiateTwoNumbers(int number_1, int number_2){
+double ExponentiateTwoNumbers(double number_1, double number_2){
   return pow(number_1, number_2);
 }
-double SquareRootNumber(int number_1) {
+double SquareRootNumber(double number_1) {
   return sqrt(number_1);
 }
 //Pitagorasz-tétel kezdete
-double CountHypotenuse(int number_1, int number_2) {
+double CountHypotenuse(double number_1, double number_2) {
   return sqrt(pow(number_1, 2) + pow(number_2, 2));
   }
-double CountOneSide(int number_3, int number_1) {
+double CountOneSide(double number_3, double number_1) {
   return sqrt(pow(number_3, 2) - pow(number_1, 2));
 }
 
-void PrintCountHypotenuse(int number_1, int number_2) {
+void PrintCountHypotenuse(double number_1, double number_2) {
   std::cout << number_1 << "^2 + " << number_2 << "^2 = " << pow(number_1, 2) << " + " << pow(number_2, 2) << " = " << pow(number_1, 2) + pow(number_2, 2) << std::endl;
   std::cout << "√" << pow(number_1, 2) + pow(number_2, 2) << " = " << CountHypotenuse(number_1, number_2) << "\n" << std::endl; 
 }
-void PrintCountOneSide(int number_3, int number_1) {
+void PrintCountOneSide(double number_3, double number_1) {
   std::cout << number_3 << "^2 - " << number_1 << "^2 = " << pow(number_3, 2) << " - " << pow(number_1, 2) << " = " << pow(number_3, 2) - pow(number_1, 2) << std::endl;
   std::cout << "√" << pow(number_3, 2) - pow(number_1, 2) << " = " << CountOneSide(number_3, number_1) << "\n" << std::endl; 
 }
-int NumberToOneSide(int number_1) {
+double NumberToOneSide(double number_1) {
     std::cout << "Add meg az egyik befogó hosszúságát: " << std::endl;
     std::cin >> number_1;
     return number_1;
 }
-int NumberToSecondSide(int number_2) {
+double NumberToSecondSide(double number_2) {
   std::cout << "Add meg a másik befogó hosszúságát: " << std::endl;
   std::cin >> number_2;
   return number_2;
 }
-int NumberToHypotenuse(int number_3) {
+double NumberToHypotenuse(double number_3) {
   std::cout << "Add meg az átfogó hosszúságát: " << std::endl;
   std::cin >> number_3;
   return number_3;
 }
 //Pitagorasz-tétel vége
 
-void PrintAdd(int number_1, int number_2) {
+void PrintAdd(double number_1, double number_2) {
   std::cout << number_1  << " + " << number_2 << " = " << AddTwoNumbers(number_1, number_2) << std::endl;
   }
  
-void PrintSubtract(int number_1, int number_2) { 
+void PrintSubtract(double number_1, double number_2) { 
   std::cout << number_1  << " - " << number_2 << " = " << SubtractTwoNumbers(number_1, number_2) <<        std::endl;
   }
   
-void PrintMultiply(int number_1, int number_2) {
+void PrintMultiply(double number_1, double number_2) {
   std::cout << number_1  << " * " << number_2 << " = " << MultiplyTwoNumbers(number_1, number_2) << std::endl;
   }
   
-void PrintDivide(int number_1, int number_2) {
+void PrintDivide(double number_1, double number_2) {
   std::cout << number_1  << " / " << number_2 << " = " << DivideTwoNumbers(number_1, number_2) << std::endl;
   }
 
-void PrintExponent(int number_1, int number_2) {
+void PrintExponent(double number_1, double number_2) {
   std::cout << number_1 << " ^ " << number_2 << " = " << ExponentiateTwoNumbers(number_1, number_2) << std::endl;
 }
-void PrintSquareRoot(int number_1){
+void PrintSquareRoot(double number_1){
   std::cout << "√" << number_1 << " = " << SquareRootNumber(number_1) << std::endl;
 }
 
@@ -178,7 +178,7 @@ void ListOperations() {
   std::cout << "\tx) - Kilépés" << std::endl;
   std::cout << "Művelet kiválasztásához üsd be a megfelelő betűt!" << std::endl;
 }
-void CalculateResult(char option, int number_1, int number_2) {
+void CalculateResult(char option, double number_1, double number_2) {
   if (option == 'a') {
     PrintAdd(number_1, number_2);
   } else if (option == 'b') {
@@ -194,18 +194,18 @@ void CalculateResult(char option, int number_1, int number_2) {
   }
 }
 
-int NumberFromUser1(int number_1) {
+double NumberFromUser1(double number_1) {
     std::cout << "Add meg az első számot: " << std::endl;
     std::cin >> number_1;
     return number_1;
 }
-int NumberFromUser2(int number_2) {
+double NumberFromUser2(double number_2) {
   std::cout << "Add meg a második számot: " << std::endl;
   std::cin >> number_2;
   return number_2;
 }
 
-  int CountForSquare(int number_1){ 
+  double CountForSquare(double number_1){ 
     std::cout << "Add meg a számot: " << std::endl;
     std::cin >> number_1;
     return number_1;
